@@ -2,7 +2,6 @@
 FILES=$(go list ./...  | grep -v /vendor/)
 
 go test -tags=unit -timeout 60s -short -v ${FILES} 
-
 returncode=$?
 if [ $returncode -ne 0 ]; then
   echo "unit tests failed"
